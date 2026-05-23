@@ -11,7 +11,7 @@
                 <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%Y-%m-%d' }}</time>
             {% endif %}
         {% when 'featured_image' %}
-            <img src="{{ article.image | image_url: 'large'}}" width="400px" height="400px" alt="{{ article.image.alt }}">
+            <img src="{{ article.image | image_url: width: 800 }}" width="400px" height="400px" alt="{{ article.image.alt }}">
         {% when 'article_content' %}
             <div class="">{{ article.content }}</div> 
         {% else %}
@@ -60,6 +60,11 @@
             "type": "article_content",
             "name": "Content",
             "limit": 1
+        }
+    ],
+    "presets": [
+        {
+            "name": "Template Article"
         }
     ]
 }
